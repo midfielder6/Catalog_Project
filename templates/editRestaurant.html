@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>Edit {{restaurant.name}}</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="{{ url_for('editRestaurant',restaurant_id = restaurant.id)}}" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" class="form-control" name="name" value="{{restaurant.name }}">
+
+					<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" class="form-control" maxlength="250" name="name" value="{{restaurant.name}}">
+					<label for="street">Street:</label>
+					<input type ="text" class="form-control" maxlength="120" name="street" value="{{restaurant.street}}">
+					<label for="city">City:</label>
+					<input type ="text" class="form-control" maxlength="75" name="city" value="{{restaurant.city}}">
+					<label for="zipcode">Zip Code:</label>
+					<input type ="text" class="form-control" maxlength="10" name="zipcode" value="{{restaurant.zipcode}}">
+					<div class="padding-bottom"></div>
+
+					<label for="rtype">Restaurant Category:</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rtype" id="rtype1" value="Fine Dining"{% if restaurant.rtype == 'Fine Dining'%}checked{%endif%}>Fine Dining
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rtype" id="rtype2" value="Tavern"{% if restaurant.rtype == 'Tavern'%}checked{%endif%}>Tavern
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rtype" id="rtype3" value="FastFood"{% if restaurant.rtype == 'FastFood'%}checked{%endif%}>Fast Food
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rtype" id="rtype4" value="Breakfast-Lunch"{% if restaurant.rtype == 'Breakfast-Lunch'%}checked{%endif%}>Breakfast-Lunch
+							</label>
+						</div>
+
+					<!-- EDIT - UPDATE BUTTON THAT SUBMITS FORM -->
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save Update</button>
+
+					<!-- CANCEL - EDIT LINK THAT GOES BACK TO showRestaurants() url -->
+					<button type="button" class="btn btn-default delete" id="button" type="button">
+							<a href = '{{url_for('showRestaurants')}}'>
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
+
+				</div>
+			</form>
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+{% endblock %}
