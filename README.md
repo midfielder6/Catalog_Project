@@ -19,10 +19,10 @@ Setting up the Environment
 1. clone or download the repo into vagrant environment.
 2. Type command vagrant up,vagrant ssh.
 3. In VM, cd /vagrant/catalog
-4. Run python database_setup.py to create the database.
-5. Run Python lotsofmenus.py to add the menu items
-6. Run python 'project.py'
-7. open your webbrowser and visit http://localhost:8000/ 
+4. Run python database_setup2.py to create the database.
+5. Run Python lotsofmenus2.py to add the menu items
+6. Run python 'project4.py'
+7. open your webbrowser and visit http://localhost:5000/ 
 
 References
 http://discussions.udacity.com/
