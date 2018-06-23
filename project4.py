@@ -177,7 +177,7 @@ def getUserID(email):
        print user.id
        return user.id
     except:
-       return HomerSimpson
+       return
 
 
 # DISCONNECT - Revoke a current user's token and reset their login_session.
